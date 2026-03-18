@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me - Hasan Thabet</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function validateForm() {
+            // Validate all fields are filled
+            var name = document.forms["contactForm"]["name"].value;
+            var email = document.forms["contactForm"]["email"].value;
+            var country = document.forms["contactForm"]["country"].value;
+            var comments = document.forms["contactForm"]["comments"].value;
+
+            if (name == "" || email == "" || country == "" || comments == "") {
+                alert("All fields must be filled out");
+                return false;
+            }
+            alert("Form submitted successfully!");
+            return true;
+        }
+    </script>
+</head>
+<body class="contact-page">
+    <nav>
+        <a href="index.html">Home</a> | <a href="contact.html">Contact Me</a>
+    </nav>
+
+    <h2>Contact Me</h2>
+    <form name="contactForm" onsubmit="return validateForm()">
+        <label>Full Name:</label><br>
+        <input type="text" name="name" required><br>
+
+        <label>Email Address:</label><br>
+        <input type="email" name="email" required><br>
+
+        <label>Country:</label><br>
+        <input type="text" name="country" required><br>
+
+        <label>Comments:</label><br>
+        <textarea name="comments" required></textarea><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <!-- JavaScript for Interactions -->
+    <script src="script.js"></script>
+</body>
+</html>
